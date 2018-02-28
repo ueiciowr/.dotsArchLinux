@@ -1,0 +1,92 @@
+
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = FantasqueSansMono 12
+#font = scientifica Regular 12
+scrollback_lines = 10000
+search_wrap = true
+icon_name = terminal
+geometry = 900x500
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = underline 
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+browser = opera
+
+# set size hints for the window
+#size_hints = true
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+[colors]
+cursor = #FFFFFF
+cursor_foreground = #FFFFFF
+foreground = #FFFFFF
+#foreground_bold = #d5f1f4
+background = #212121
+
+# 20% background transparency (requires a compositor)
+#background = rgba(8,8,13,0.99)
+
+# if unset, will reverse foreground and background
+highlight = #FFFFFF
+
+# colors from color0 to color254 can be set
+
+# black
+color0= #414141
+color8= #5A5A5A
+
+# red
+color1= #CA0049
+color9= #BD005B
+
+# Green
+color2= #CA0049
+color10= #FFFFFF
+
+# Yellow
+color3= #FFFFFF
+color11= #F0DFAF
+
+# Blue
+color4 = #FF9B3E
+color12 = #BDBDBD
+
+# Magenta
+color5 =  #83AAA9
+color13 = #819FA0
+
+# Cyan
+color6 = #86949B
+color14 = #BD004F
+
+# White
+color7=  #FFFFFF
+color15= #FFFFFF
+
+[hints]
+#font = scientifica Regular 11
+#foreground:    #ac8e8e
+#background:    #101011
+#active_foreground = #e68080
+#active_background = #3f3f3f
+padding = 4
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0

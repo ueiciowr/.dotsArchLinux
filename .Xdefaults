@@ -1,0 +1,200 @@
+!
+!
+!    ▒██   ██▒▓█████▄ ▓█████   █████▒▄▄▄       █    ██  ██▓  ▄▄▄█████▓  ██████ 
+!    ▒▒ █ █ ▒░▒██▀ ██▌▓█   ▀ ▓██   ▒▒████▄     ██  ▓██▒▓██▒  ▓  ██▒ ▓▒▒██    ▒ 
+!    ░░  █   ░░██   █▌▒███   ▒████ ░▒██  ▀█▄  ▓██  ▒██░▒██░  ▒ ▓██░ ▒░░ ▓██▄   
+!     ░ █ █ ▒ ░▓█▄   ▌▒▓█  ▄ ░▓█▒  ░░██▄▄▄▄██ ▓▓█  ░██░▒██░  ░ ▓██▓ ░   ▒   ██▒
+!██▓ ▒██▒ ▒██▒░▒████▓ ░▒████▒░▒█░    ▓█   ▓██▒▒▒█████▓ ░██████▒▒██▒ ░ ▒██████▒▒
+!▒▓▒ ▒▒ ░ ░▓ ░ ▒▒▓  ▒ ░░ ▒░ ░ ▒ ░    ▒▒   ▓▒█░░▒▓▒ ▒ ▒ ░ ▒░▓  ░▒ ░░   ▒ ▒▓▒ ▒ ░
+!░▒  ░░   ░▒ ░ ░ ▒  ▒  ░ ░  ░ ░       ▒   ▒▒ ░░░▒░ ░ ░ ░ ░ ▒  ░  ░    ░ ░▒  ░ ░
+!░    ░    ░   ░ ░  ░    ░    ░ ░     ░   ▒    ░░░ ░ ░   ░ ░   ░      ░  ░  ░  
+! ░   ░    ░     ░       ░  ░             ░  ░   ░         ░  ░             ░  
+! 	░            ░ Edited: @ueiciowr | https://t.me/ueiciowr                                            
+!												
+!-----------------------------------------------------------------------
+!                         Xft settings
+!-----------------------------------------------------------------------
+
+! Rofi
+rofi.font: Roboto 25
+rofi.separator-style: none
+rofi.scrollbar-width: 0
+rofi.location: 1
+rofi.yoffset: 50
+rofi.xoffset: 120
+rofi.padding: 40
+rofi.lines: 5
+rofi.width: 36
+rofi.bw: 0
+
+! DPI/Font
+Xft.dpi: 192
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! Dylans Xresources
+URxvt.geometry: 110x30
+URxvt.scrollBar: false
+URxvt*buffered: false
+
+Xft.dpi:                80
+Xft.autohint:           0       
+Xft.antialias:          true
+Xft.rgba:               rgb
+Xft.hinting:            true
+Xft.lcdfilter:          lcddefault
+Xft.hintstyle:          hintsfull
+
+
+!-----------------------------------------------------------------------
+!                        URxvt settings 
+!-----------------------------------------------------------------------
+
+!
+! Generated with :
+! XRDB2Xreources.py
+!
+*.foreground:  #FFFFFF
+*.background:  #282626
+*.cursorColor: #FFFFFF
+!
+! Black
+*.color0:      #414141
+*.color8:      #5A5A5A
+!
+! Red
+*.color1:      #CA0049
+*.color9:      #BD005B
+!
+! Green
+*.color2:      #CA0049
+*.color10:     #FFFFFF
+!
+! Yellow
+*.color3:      #FFFFFF
+*.color11:     #F0DFAF
+!
+! Blue
+*.color4:      #FF9B3E
+*.color12:     #BDBDBD
+!
+! Magenta
+*.color5:      #83AAA9
+*.color13:     #819FA0
+!
+! Cyan
+*.color6:      #86949B
+*.color14:     #BD004F
+!
+! White
+*.color7:      #FFFFFF
+*.color15:     #FFFFFF
+!
+! Bold, Italic, Underline
+*.colorBD:     #dcdccc
+!*.colorIT:
+!*.colorUL:
+
+
+! +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+
+Urxvt.secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
+
+URxvt.internalBorder:    14
+URxvt.externalBorder:    10
+!URxvt.lineSpace:        0
+!urxvt*shading:          30
+URxvt.depth:             32
+URxvt.saveLines:         10000
+URxvt*geometry:          70x30
+URxvt*terminalName:      rxvt-unicode-256color
+URxvt*visualBell:        false
+
+!! Scrollbar
+!URxvt.scrollStyle:      rxvt
+URxvt.scrollBar:         false
+URxvt*scrollTtyOutput:   false
+URxvt*scrollWithBuffer:  true
+URxvt*scrollTtyKeypress: true
+
+!! Fonts
+URxvt.font:             xft:Fantasque Sans Mono:pixelsize=14,xft:Font Awesome 5 Free:pixelsize=14
+URxvt.boldFont:         xft:Fantasque Sans Mono:bold:pixelsize=14
+URxvt.letterSpace: -1
+
+URxvt*font:              fonts
+URxvt*boldFont:          fonts
+URxvt*italicFont:        fonts
+URxvt*boldItalicFont:    fonts
+
+URxvt.letterSpace:       true
+
+!! Keybinding
+URxvt.keysym.C-Up:       perl:font-size:increase
+URxvt.keysym.C-Down:     perl:font-size:decrease
+URxvt.keysym.C-S-Up:     perl:font-size:incglobal
+URxvt.keysym.C-S-Down:   perl:font-size:decglobal
+!Home and End keys to jump to the beginning and end of lines
+URxvt*keysym.Home:       \033[1~
+URxvt*keysym.End:        \033[4~
+
+!! Tabs
+URxvt.tabbed.tabbar-bg:  -1
+URxvt.tabbed.tabbar-fg:  -2
+URxvt.tabbed.tab-bg:     -2
+URxvt.tabbed.tab-fg:     -1
+URxvt.tabbed.title-bg:   -1
+URxvt.tabbed.title-fg:   -2
+URxvt.tabbed.autohide:   true
+URxvt.tabbed.new-button: false
+URxvt.tabbed.title:      true
+
+!! Perl extensions
+! url-select (part of urxvt-perls package)
+URxvt.perl-ext-common:      default,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u: perl:     url-select:select_next
+URxvt.url-select.autocopy:  true
+URxvt.url-select.button:    2
+URxvt.url-select.underline: true
+URxvt.url-launcher:         /usr/bin/firefox
+URxvt.matcher.button:       1
+
+!! CopyPaste Keys
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
+
+!! Disable the stupid ctrl+shift 'feature'
+URxvt.iso14755:            false
+URxvt.iso14755_52:         false
+
+!! Cursor
+URxvt.colorUL:             #d6bfb8
+Xcursor.theme:             Adwaita
+
+!! Pointer
+!URxvt.pointerBlank:        true
+
+!! Colors
+include "/home/krootkit/MyDotfiles/gruvbox-master/colors/gruvbox.vim" 
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #C02A4C ,  #1B2B34
+! Color scheme for urgent row
+rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #1B2B34
+! Color scheme for active row
+rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #1B2B34
+! Color scheme window
+rofi.color-window:                   argb:ee222222,   #C02A4C ,   #C02A4C
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+!Font
+rofi.font: pragmatapro for powerline 9
