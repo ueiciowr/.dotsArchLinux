@@ -12,5 +12,5 @@ updates=$(("$updates_arch" + "$updates_aur"))
 if [ "$updates" != "0" ]; then
     echo "%{F#b30059} %{F-} $updates"
 else
-    echo "%{F#b30059} %{F-}Updated"
+    echo "%{F#b30059} %{F-}Update"
 fi

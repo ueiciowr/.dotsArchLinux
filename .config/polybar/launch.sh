@@ -1,3 +1,4 @@
+
 #!/usr/bin/env sh
 
 # Terminate already running instances of the bar
@@ -8,6 +9,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 
 # Launch the bar
-polybar top -c ~/.config/polybar/config &
+polybar top -q &
 
 echo "Launched the main bar ..."

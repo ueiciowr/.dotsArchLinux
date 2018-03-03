@@ -53,7 +53,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
-bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/nord.rasi -font "Fantasque Sans Mono Regular 10" -lines 7
+bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/Phatogen.rasi -font "Fantasque Sans Mono Regular 10" -lines 7
+bindsym $mod+q exec --no-startup-id rofi -show window -config ~/.config/rofi/PhatogenWindow.rasi -font "Roboto Light 10"
 ## ----------------------------------------------------------------------------##
 
 # Change focus
@@ -109,7 +110,7 @@ bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+control+w layout tabbed
 bindsym $mod+e layout toggle split
 
 ## ----------------------------------------------------------------------------##
@@ -152,7 +153,7 @@ popup_during_fullscreen smart
 # Customize workspace name
 
 set $WS1   "1:  "
-set $WS2   "2:  "
+set $WS2   "2:  "
 set $WS3   "3:  "
 set $WS4   "4:  "
 set $WS5   "5:   "
@@ -211,7 +212,7 @@ bindsym $mod+Shift+0 move container to workspace $WS0
 
 # Startup applications
 exec_always --no-startup-id ~/.local/share/applications/mpd.desktop
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xautolock -time 10 -locker i3lock-fancy
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec --no-startup-id nm-applet
@@ -240,7 +241,6 @@ for_window [class="Gimp"]                           border normal 0
 # Shortcut Applications
 
 bindsym $mod+Return     workspace $WS1; exec termite
-bindsym $mod+b          workspace $WS9; exec burpsuite
 bindsym $mod+c          workspace $WS2; exec code
 bindsym $mod+p          workspace $WS2; exec leafpad
 bindsym $mod+n          workspace $WS3; exec firefox
@@ -248,6 +248,8 @@ bindsym $mod+o          workspace $WS3; exec opera
 bindsym $mod+g          workspace $WS3; exec google-chrome-unstable 
 bindsym $mod+t          workspace $WS4; exec thunar
 bindsym $mod+control+t  workspace $WS8; exec Telegram
+bindsym $mod+b          workspace $WS9; exec burpsuite
+bindsym $mod+w 			workspace $WS9; exec wireshark
 bindsym --release Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/Imagens/'
 bindsym $mod+shift+n exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp -s playlist
 #bindsym $mod+Control+d exec /home/euiciowr/.config/i3/scripts/dzenmpd.sh
@@ -281,6 +283,8 @@ assign [class="Upwork"]                         → $WS8
 assign [class="Galculator"]                     → $WS9
 assign [class="Gnome-font-viewer"]              → $WS9
 assign [class="Go-for-it"]                      → $WS9
+assign [class="wireshark"]						→ $WS9
+assign [class="burpsuite"]						→ $WS9	
 assign [class="Keepassx"]                       → $WS9
 assign [class="Lxtask"]                         → $WS9
 assign [class="Transmission-gtk"]               → $WS9
