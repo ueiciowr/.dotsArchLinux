@@ -1,7 +1,4 @@
-//  ;;; --------------------------- ;;;
-//  ;  Edited: @ueiciowr | Mauricío   ;
-//  ;;; --------------------------- ;;;
-
+// @ueiciowr
 
 // ------------------------------------
 // Configuration
@@ -26,16 +23,16 @@ configuration {
 // ------------------------------------
 
 * {
-    nord0:			 #2E3440;
-    nord1: 			 #3B4252;
-    nord2: 			 #434C5E;
-    nord3: 			 #4C566A;
-    nord4: 			 #D8DEE9;
-    nord5:  			 #E5E9F0;
-    nord6:  			 #ECEFF4;
-    nord7: 			 #8FBCBB;
-    nord8:   			 #88C0D0;
-    nord9:  			 #81A1C1;
+    nord0:			     #2E3440;
+    nord1: 			     #3B4252;
+    nord2: 			     #434C5E;
+    nord3: 			     #4C566A;
+    nord4: 			     #D8DEE9;
+    nord5:  		     #E5E9F0;
+    nord:  			     #ECEFF4;
+    nord: 			     #8FBCBB;
+    nord:   			 #88C0D0;
+    nordn:  			 #81A1C1;
     nord10: 			 #5E81AC;
     nord11: 			 #BF616A;
     nord12: 			 #D08770;
@@ -63,7 +60,7 @@ configuration {
     selected-normal-background:  @nord17;
     border-color:                @nord18;
     spacing:                     3;
-    separatorcolor:              @nord14;
+    separatorcolor:              @nord16;
     urgent-background:           @background;
     selected-urgent-background:  @nord3;
     alternate-urgent-foreground: @urgent-foreground;
