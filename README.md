@@ -25,4 +25,4 @@
 | SHELL                 | zsh                   |
 
 
-<img src="https://raw.githubusercontent.com/ueiciowr/Arch-dots/master/screenshots/2018-02-28-15%3A17%3A26.png">
+<img src="https://raw.githubusercontent.com/ueiciowr/Arch-dots/master/screenshots/2018-03-11-00%3A35%3A32.png">
