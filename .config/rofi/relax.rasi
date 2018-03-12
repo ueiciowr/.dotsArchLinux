@@ -1,7 +1,4 @@
-//  ;;; --------------------------- ;;;
-//  ;  Edited: @ueiciowr | Mauricío   ;
-//  ;;; --------------------------- ;;;
-
+// @ueiciowr
 
 // ------------------------------------
 // Configuration
@@ -11,7 +8,7 @@ configuration {
 	modi: 			"drun,run";
 	width: 			360;
 	lines: 			12;
-	font: 			"Hack 10";
+	font: 			"Fantasque Sans Mono Regular 14";
 	show-match: 		false;
 	separator-style: 	"solid";
 	hide-scrollbar: 	true;
@@ -26,51 +23,51 @@ configuration {
 // ------------------------------------
 
 * {
-    Phatogen0:			 #2E3440;
-    Phatogen1: 			 #3B4252;
-    Phatogen2: 			 #434C5E;
-    Phatogen3: 			 #4C566A;
-    Phatogen4: 			 #D8DEE9;
-    Phatogen5:  			 #E5E9F0;
-    Phatogen:  			 #ECEFF4;
-    Phatogen: 			 #8FBCBB;
-    Phatogen:   			 #88C0D0;
-    Phatogen:  			 #81A1C1;
-    Phatogen10: 			 #5E81AC;
-    Phatogen11: 			 #BF616A;
-    Phatogen12: 			 #D08770;
-    Phatogen13: 			 #EBCB8B;
-    Phatogen14: 			 #b9aa99;
-    Phatogen15: 			 #B48EAD;
-    Phatogen16:              #262626;
-    Phatogen17:              #FFFFFF;
-    Phatogen18:              #00ffcc;
-    Phatogen19:              #d1d1e0;
-    background:                  @Phatogen16;
-    foreground:                  @Phatogen17;
-    selected-normal-foreground:  @Phatogen16;
+    RELAX0:			     #2E3440;
+    RELAX1: 			 #3B4252;
+    RELAX2: 			 #434C5E;
+    RELAX3: 			 #4C566A;
+    RELAX4: 			 #D8DEE9;
+    RELAX5:  		     #E5E9F0;
+    RELAX:  			 #ECEFF4;
+    RELAX: 			     #8FBCBB;
+    RELAX:   			 #88C0D0;
+    RELAXn:  			 #81A1C1;
+    RELAX10: 			 #5E81AC;
+    RELAX11: 			 #BF616A;
+    RELAX12: 			 #D08770;
+    RELAX13: 			 #EBCB8B;
+    RELAX14: 			 #b9aa99;
+    RELAX15: 			 #B48EAD;
+    RELAX16:             #ffffff;
+    RELAX17:             #3d3d3d;
+    RELAX18:             #00ffcc;
+    RELAX19:             #d1d1e0;
+    background:                  @RELAX16;
+    foreground:                  @RELAX17;
+    selected-normal-foreground:  @RELAX16;
     normal-foreground:           @foreground;
-    alternate-normal-background: @Phatogen16;
-    selected-urgent-foreground:  @Phatogen4;
+    alternate-normal-background: @RELAX16;
+    selected-urgent-foreground:  @RELAX4;
     urgent-foreground:           @foreground;
-    alternate-urgent-background: @Phatogen0;
+    alternate-urgent-background: @RELAX0;
     active-foreground:           @foreground;
     selected-active-foreground:  @foreground;
-    alternate-active-background: @Phatogen0;
-    bordercolor:                 @Phatogen10;
+    alternate-active-background: @RELAX0;
+    bordercolor:                 @RELAX10;
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
-    selected-normal-background:  @Phatogen17;
-    border-color:                @Phatogen18;
+    selected-normal-background:  @RELAX17;
+    border-color:                @RELAX18;
     spacing:                     3;
-    separatorcolor:              @Phatogen16;
+    separatorcolor:              @RELAX16;
     urgent-background:           @background;
-    selected-urgent-background:  @Phatogen3;
+    selected-urgent-background:  @RELAX3;
     alternate-urgent-foreground: @urgent-foreground;
     background-color:            @background;
     alternate-active-foreground: @active-foreground;
     active-background:           @background;
-    selected-active-background:  @Phatogen3;
+    selected-active-background:  @RELAX3;
 }
 
 #window {

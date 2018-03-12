@@ -23,9 +23,9 @@ set $mod Mod4
 set $left   j
 set $down   k
 set $up     l
-set $right  semicolon
+set $right  m
 
-exec_always --no-startup-id killall polybar; polybar top &
+exec_always --no-startup-id killall polybar
 #exec_always --no-startup-id killall polybar; polybar botton &
 
 ## ----------------------------------------------------------------------------##
@@ -47,14 +47,14 @@ floating_modifier $mod
 ## ----------------------------------------------------------------------------##
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 ## ----------------------------------------------------------------------------##
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
-bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/Nord.rasi -font "Fantasque Sans Mono Regular 10" -lines 7
-bindsym $mod+q exec --no-startup-id rofi -show window -config ~/.config/rofi/NordWindow.rasi -font "Roboto Light 10"
+bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/relax.rasi -font "Fantasque Sans Mono Regular 10" -lines 7
+bindsym $mod+control+d exec --no-startup-id rofi -show window -config ~/.config/rofi/relaxWindow.rasi -font "Roboto Light 10"
 ## ----------------------------------------------------------------------------##
 
 # Change focus
@@ -80,7 +80,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ccedilla move right
+bindsym $mod+Shift+ç move right
 
 ## ----------------------------------------------------------------------------##
 
@@ -141,7 +141,7 @@ bindsym $mod+Shift+minus move scratchpad
 ## ----------------------------------------------------------------------------##
 
 # Show the next scratchpad window or hide the focused scratchpad window
-bindsym $mod+minusRR scratchpad show
+bindsym $mod+minus scratchpad show
 
 ## ----------------------------------------------------------------------------##
 
@@ -215,7 +215,7 @@ exec --no-startup-id ~/.local/share/applications/mpd.desktop
 exec --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id xautolock -time 10 -locker i3lock-fancy
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 #exec --no-startup-id feh --bg-fill ~/Imagens/wallhaven-118509_1920x1080.png
 exec --no-startup-id compton --config ~/.config/compton.conf
 
@@ -242,7 +242,7 @@ for_window [class="Gimp"]                           border normal 0
 
 # Shortcut Applications
 
-bindsym $mod+Return     workspace $WS1; exec termite
+bindsym $mod+Return     workspace $WS1; exec urxvt
 bindsym $mod+c          workspace $WS2; exec code
 bindsym $mod+p          workspace $WS2; exec leafpad
 bindsym $mod+n          workspace $WS3; exec firefox
@@ -253,10 +253,10 @@ bindsym $mod+control+n  workspace $WS4; exec nemo
 bindsym $mod+control+t  workspace $WS8; exec Telegram
 bindsym $mod+b          workspace $WS9; exec burpsuite
 bindsym $mod+w 		workspace $WS9; exec wireshark
-bindsym --release Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/Imagens/'
-bindsym $mod+shift+n exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp -s playlist
-#bindsym $mod+Control+d exec /home/euiciowr/.config/i3/scripts/dzenmpd.sh
-bindsym $mod+x  exec i3lock-fancy
+bindsym --release Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/Imagens/Prints/'
+bindsym $mod+shift+n exec --no-startup-id termite -name ncmpcpp -e ncmpcpp -s playlist
+#bindsym $mod+Control+d exec ~/.config/i3/scripts/dzenmpd.sh
+bindsym $mod+y  exec i3lock-fancy
 bindsym Print   exec scrot
 
 ## ----------------------------------------------------------------------------##
@@ -287,8 +287,8 @@ assign [class="Upwork"]                         → $WS8
 assign [class="Galculator"]                     → $WS9
 assign [class="Gnome-font-viewer"]              → $WS9
 assign [class="Go-for-it"]                      → $WS9
-assign [class="wireshark"]			→ $WS9
-assign [class="burpsuite"]			→ $WS9	
+assign [class="wireshark"]		        → $WS9
+assign [class="burpsuite"]	                → $WS9	
 assign [class="Keepassx"]                       → $WS9
 assign [class="Lxtask"]                         → $WS9
 assign [class="Transmission-gtk"]               → $WS9
@@ -440,7 +440,7 @@ exec setxkbmap -layout "br"
 ### i3-gaps stuff ###
 
 # Necessary for i3-gaps to work properly (pixel can be any value)
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 
 # Smart Gaps
 smart_gaps on
@@ -448,9 +448,14 @@ smart_gaps on
 # Smart Borders
 smart_borders on
 
-# Some color adjustments
-client.focused_inactive #404040 #404040 #404040 #404040 #404040
-client.unfocused        #404040 #404040 #404040 #404040 #404040
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #FFFFFF
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #a6a6a6
+client.unfocused        #333333 #222222 #888888 #292d2e   #a6a6a6
+client.urgent           #2f343a #900000 #ffffff #900000   #FFFFFF
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #FFFFFF
+ 
+client.background       #ffffff
 
 # Set inner/outer gaps
 gaps inner 13
@@ -460,7 +465,7 @@ gaps outer 6
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $mod+control+r mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
