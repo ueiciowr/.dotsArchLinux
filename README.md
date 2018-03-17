@@ -24,5 +24,6 @@
 |  Screen Capture       |  scrot                |
 | SHELL                 | zsh                   |
 
+<img src="https://raw.githubusercontent.com/ueiciowr/Arch-dots/master/2018-03-17-11%3A08%3A38.png">
 
 <img src="https://raw.githubusercontent.com/ueiciowr/Arch-dots/master/screenshots/2018-03-11-00%3A35%3A32.png">
