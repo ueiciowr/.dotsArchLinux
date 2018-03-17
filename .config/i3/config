@@ -1,13 +1,13 @@
-#			     __    ,___                     
-#			 o     )  /   /             /) o    									
-#			,    -/  /      __ _ _     // ,  _, 								
-#			(____/  (___/  (_)/ / /_  //_ (_(_)__    							
-#			                         /)      /| 								
-#			                        (/      (/  								
-#                                    											
-#                         By: @ueiciowr | https://t.me/ueiciowr                 
-#                 																
-#																				
+#			     __    ,___
+#			 o     )  /   /             /) o
+#			,    -/  /      __ _ _     // ,  _,
+#			(____/  (___/  (_)/ / /_  //_ (_(_)__
+#			                         /)      /|
+#			                        (/      (/
+#
+#                         By: @ueiciowr | https://t.me/ueiciowr
+#
+#
 ## ----------------------------------------------------------------------------##
 
 font pango:Fantasque Sans Mono Regular 11, FontAwesome 10
@@ -53,8 +53,8 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -nb '#212121' -sb '#2B83A6' -sf '#FFFFFF' -fn 'Source Sans Pro-10'"
-bindsym $mod+d exec --no-startup-id rofi -show run -config ~/.config/rofi/relax.rasi -font "Fantasque Sans Mono Regular 10" -lines 7
-bindsym $mod+control+d exec --no-startup-id rofi -show window -config ~/.config/rofi/relaxWindow.rasi -font "Roboto Light 10"
+bindsym $mod+d exec --no-startup-id rofi -show drun -config ~/.config/rofi/relax.rasi
+bindsym $mod+control+d exec --no-startup-id rofi -show window -config ~/.config/rofi/relaxWindow.rasi
 ## ----------------------------------------------------------------------------##
 
 # Change focus
@@ -152,16 +152,16 @@ popup_during_fullscreen smart
 
 # Customize workspace name
 
-set $WS1   "1:  "
-set $WS2   "2:  "
-set $WS3   "3:  "
-set $WS4   "4:  "
-set $WS5   "5:   "
-set $WS6   "6:   "
-set $WS7   "7:   "
-set $WS8   "8:   "
-set $WS9   "9:   "
-set $WS0   "10:   "
+set $WS1   "1:  term "
+set $WS2   "2:  code "
+set $WS3   "3:  web "
+set $WS4   "4:  file "
+set $WS5   "5:   doc "
+set $WS6   "6:   média "
+set $WS7   "7:   design "
+set $WS8   "8:   chat "
+set $WS9   "9:   lab "
+set $WS0   "10:   sys "
 
 ## ----------------------------------------------------------------------------##
 
@@ -242,20 +242,22 @@ for_window [class="Gimp"]                           border normal 0
 
 # Shortcut Applications
 
-bindsym $mod+Return     workspace $WS1; exec urxvt
-bindsym $mod+c          workspace $WS2; exec code
-bindsym $mod+p          workspace $WS2; exec leafpad
-bindsym $mod+n          workspace $WS3; exec firefox
-bindsym $mod+o          workspace $WS3; exec opera
-bindsym $mod+g          workspace $WS3; exec google-chrome-unstable 
-bindsym $mod+t          workspace $WS4; exec thunar
-bindsym $mod+control+n  workspace $WS4; exec nemo
-bindsym $mod+control+t  workspace $WS8; exec Telegram
+bindsym $mod+Return     workspace $WS1; exec urxvt | notify-send -i ~/.local/share/icons/terminal.png -u normal -t 9000 'Launched the URxvt'
+bindsym $mod+c          workspace $WS2; exec code | notify-send -i ~/.local/share/icons/code.png -u normal -t 10000 'Launched the Visual Studio Code'
+bindsym $mod+p          workspace $WS2; exec leafpad | notify-send -i ~/.local/share/icons/leafpad.png -u normal -t 8000 'Launched the Leafpad'
+bindsym $mod+n          workspace $WS3; exec firefox | notify-send -i ~/.local/share/icons/firefox.png -u normal -t 10000 'Launched the Firefox Browser'
+bindsym $mod+o          workspace $WS3; exec opera | notify-send -i ~/.local/share/icons/opera.png -u normal -t 10000 'Launched the Opera Browser'
+bindsym $mod+g          workspace $WS3; exec google-chrome-unstable | notify-send -i ~/.local/share/icons/google-chrome-unstable.png.png -u normal -t 12000 'Launched the Chrome Browser'
+bindsym $mod+t          workspace $WS4; exec thunar | notify-send -i ~/.local/share/icons/Thunar.png -u normal -t 8000 'Launched the Thunar'
+bindsym $mod+control+n  workspace $WS4; exec nemo | notify-send -i ~/.local/share/icons/nemo.png -u normal -t 8000 'Launched the Nemo'
+bindsym $mod+control+t  workspace $WS8; exec Telegram | notify-send -i ~/.local/share/icons/telegram.png -u normal -t 9000 'Launched the Telegram'
 bindsym $mod+b          workspace $WS9; exec burpsuite
-bindsym $mod+w 		workspace $WS9; exec wireshark
-bindsym --release Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/Imagens/Prints/'
-bindsym $mod+shift+n exec --no-startup-id termite -name ncmpcpp -e ncmpcpp -s playlist
-#bindsym $mod+Control+d exec ~/.config/i3/scripts/dzenmpd.sh
+bindsym $mod+w 		workspace $WS9; exec wireshark | notify-send -i /usr/share/icons/hicolor/24x24/apps/wireshark.png -u normal -t 12000 'Launched the Wireshark'
+
+bindsym --release Print exec --no-startup-id scrot %Y-%m-%d-%T.png -e 'mv $f ~/Imagens/Prints/' | notify-send -i ~/.local/share/icons/customer-service.png -u normal -t 9000 'Screenshot taken and saved to ~/Imagens/Prints'
+bindsym $mod+Control+p exec scrot ~/Imagens/Prints/$(date +%d-%m-%y_%H:%M:%S).png | notify-send -u normal 'Screenshot taken and saved to ~/Imagens/Prints'
+
+bindsym $mod+shift+n  workspace $WS1; exec --no-startup-id urxvt -name ncmpcpp -e ncmpcpp -s playlist
 bindsym $mod+y  exec i3lock-fancy
 bindsym Print   exec scrot
 
@@ -288,7 +290,7 @@ assign [class="Galculator"]                     → $WS9
 assign [class="Gnome-font-viewer"]              → $WS9
 assign [class="Go-for-it"]                      → $WS9
 assign [class="wireshark"]		        → $WS9
-assign [class="burpsuite"]	                → $WS9	
+assign [class="burpsuite"]	                → $WS9
 assign [class="Keepassx"]                       → $WS9
 assign [class="Lxtask"]                         → $WS9
 assign [class="Transmission-gtk"]               → $WS9
@@ -427,8 +429,8 @@ bindsym XF86AudioLowerVolume exec "amixer set Master 5%-"
 
 # Sreen brightness controls
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 3
-bindsym XF86MonBrightnessDown exec xbacklight -dec 3
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3 | notify-send -i ~/.local/share/icons/ibrightness.png -u low -t 8000 'brightness increase'
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3 | notify-send -i ~/.local/share/icons/dbrightness.png -u low -t 8000 'decreased brightness'
 
 ## ----------------------------------------------------------------------------##
 
@@ -454,7 +456,7 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #a6a6a6
 client.unfocused        #333333 #222222 #888888 #292d2e   #a6a6a6
 client.urgent           #2f343a #900000 #ffffff #900000   #FFFFFF
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #FFFFFF
- 
+
 client.background       #ffffff
 
 # Set inner/outer gaps

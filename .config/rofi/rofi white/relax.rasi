@@ -5,10 +5,10 @@
 // ------------------------------------
 
 configuration {
-	modi: 			"window";
-	width: 			450;
+	modi: 			"drun";
+	width: 			360;
 	lines: 			30;
-	font: 			"Noto Sans 9";
+	font: 			"Fantasque Sans Mono Regular 14";
 	show-match: 		false;
 	separator-style: 	"solid";
 	hide-scrollbar: 	true;
@@ -52,7 +52,7 @@ configuration {
     urgent-foreground:           @foreground;
     alternate-urgent-background: @RELAX0;
     active-foreground:           @foreground;
-    selected-active-foreground:  @RELAX16;
+    selected-active-foreground:  @foreground;
     alternate-active-background: @RELAX0;
     bordercolor:                 @RELAX10;
     alternate-normal-foreground: @foreground;
@@ -67,26 +67,26 @@ configuration {
     background-color:            @background;
     alternate-active-foreground: @active-foreground;
     active-background:           @background;
-    selected-active-background:  @RELAX17;
+    selected-active-background:  @RELAX3;
 }
 
 #window {
    background-color: @blackdarkest;
    anchor: north;
-   x-offset: 89%;
+   x-offset: 9%;
    location: west;
    y-offset: -46.4%;
 }
 
 #mainbox {
     border:  0;
-    padding: 20;
+    padding: 30;
 }
 
 #message {
     border:       4px 4px 4px ;
     border-color: @separatorcolor;
-    padding:      50 ;
+    padding:      20 ;
 }
 
 #textbox {
@@ -101,7 +101,7 @@ configuration {
 
 #element {
     border:  0;
-    padding: 5px ;
+    padding: 9px ;
 }
 
 #element.normal.normal {

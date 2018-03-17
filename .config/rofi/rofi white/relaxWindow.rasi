@@ -5,10 +5,10 @@
 // ------------------------------------
 
 configuration {
-	modi: 			"window";
+	modi: 			"run";
 	width: 			450;
 	lines: 			30;
-	font: 			"Noto Sans 9";
+	font: 			"Fantasque Sans Mono Regular 14";
 	show-match: 		false;
 	separator-style: 	"solid";
 	hide-scrollbar: 	true;

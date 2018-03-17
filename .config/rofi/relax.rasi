@@ -5,11 +5,11 @@
 // ------------------------------------
 
 configuration {
-	modi: 			"drun,run";
+	modi: 			"drun";
 	width: 			360;
-	lines: 			12;
-	font: 			"Fantasque Sans Mono Regular 14";
-	show-match: 		false;
+	lines: 			30;
+	font: 			"Noto Sans 11";
+	show-match: 		true;
 	separator-style: 	"solid";
 	hide-scrollbar: 	true;
 	}
@@ -39,21 +39,22 @@ configuration {
     RELAX13: 			 #EBCB8B;
     RELAX14: 			 #b9aa99;
     RELAX15: 			 #B48EAD;
-    RELAX16:             #ffffff;
+    RELAX16:             #FFFFFF;
     RELAX17:             #3d3d3d;
     RELAX18:             #00ffcc;
     RELAX19:             #d1d1e0;
-    background:                  @RELAX16;
-    foreground:                  @RELAX17;
+    RELAX20:             #1a1a1a;
+    background:                  @RELAX20;
+    foreground:                  @RELAX16;
     selected-normal-foreground:  @RELAX16;
     normal-foreground:           @foreground;
-    alternate-normal-background: @RELAX16;
+    alternate-normal-background: @RELAX20;
     selected-urgent-foreground:  @RELAX4;
     urgent-foreground:           @foreground;
     alternate-urgent-background: @RELAX0;
-    active-foreground:           @foreground;
-    selected-active-foreground:  @foreground;
-    alternate-active-background: @RELAX0;
+    active-foreground:           @RELAX20;
+    selected-active-foreground:  @RELAX20;
+    alternate-active-background: @RELAX20;
     bordercolor:                 @RELAX10;
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
@@ -64,7 +65,7 @@ configuration {
     urgent-background:           @background;
     selected-urgent-background:  @RELAX3;
     alternate-urgent-foreground: @urgent-foreground;
-    background-color:            @background;
+    background-color:            @RELAX20;
     alternate-active-foreground: @active-foreground;
     active-background:           @background;
     selected-active-background:  @RELAX3;
@@ -73,9 +74,9 @@ configuration {
 #window {
    background-color: @blackdarkest;
    anchor: north;
-   x-offset: 11.6%;
+   x-offset: 9%;
    location: west;
-   y-offset: -43%;
+   y-offset: -46.7%;
 }
 
 #mainbox {
@@ -101,7 +102,7 @@ configuration {
 
 #element {
     border:  0;
-    padding: 5px ;
+    padding: 9px ;
 }
 
 #element.normal.normal {

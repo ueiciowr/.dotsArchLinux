@@ -11,58 +11,58 @@
 ;;; ------------------------------------------------------------------------ ;;;
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}A
-foreground = #dfdfdf
+transparente = #d0000000
+background = ${colors.transparente}
+;background = #222
+background-alt = #1a1a1a
+foreground = #FFFFFF
 foreground-alt = #555
-primary = #ffb52a
+primary = #1a1a1a
 secondary = #e60053
 alert = #bd2c40
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 38
-offset-x = 1%
-offset-y = 1%
+height = 36
+offset-x = 0%
+offset-y = 0%
 radius = 0.0
 fixed-center = true
-#separator = " "
+separator = " "
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
-line-color = #f00
+line-size = 1
+line-color = ${colors.background}
 
 border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 4
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-0 = fixed:pixelsize=9;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 font-2 = Wuncon Siji:pixelsize=10;1
-font-3 = FontAwesome:pixelsize=9;0
-font-4 = artwiz snap:size=10;1
+font-3 = FontAwesome:pixelsize=10;0
+font-4 = feather:size=10;1
 
-modules-left = menu mpd
-modules-center = i3
-modules-right = update volume memory xkeyboard wlan battery temperature date 
+modules-left = menu-apps dzen2 i3
+modules-center = mpd
+modules-right = update temperature backlight volume memory xkeyboard wlan battery calendar
 
 tray-position = right
 tray-padding = 11
 tray-transparent = true
-tray-background = #0063ff
+tray-background = #1a1a1a
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -83,7 +83,46 @@ cursor-scroll = ns-resize
 ;     															               ;
 ;;; ------------------------------------------------------------------------ ;;;
 
+[module/dzen2]
+type = custom/text
+content = ""
+content-padding = 1
+click-left = ~/.config/polybar/scripts/sysinfo.sh
 
+[module/calendar]
+type = custom/script
+interval = 1
+exec =  date "+%a %H:%M:%S"
+format =  <label>
+format-prefix = " "
+format-prefix-foreground = #b30059
+format-padding   = 0.5
+label-padding    = 0
+click-left = ~/.config/polybar/scripts/calendar2.sh &
+
+[module/github]
+type = custom/script
+exec = ~/.config/polybar/scripts/github.sh
+interval = 10
+format =  <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.secondary}
+
+[module/backlight]
+type = internal/xbacklight
+; To list available cards use: $ ls -1 /sys/class/backlight/
+;card = intel_backlight
+
+format = <ramp> <label>
+;    
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+ramp-foreground = #b30059
 
 ; ---------------------------------------------------------------------------- ;;
 ; VOLUME
@@ -104,7 +143,7 @@ format-prefix-foreground = #b30059
 
 [module/update]
 type = custom/script
-interval = 100
+interval = 10
 format = <label>
 label = "%output:0:30%"
 exec = ~/.config/polybar/scripts/update.sh
@@ -163,7 +202,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 [module/mpd]
 type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random> <bar-progress>  <label-song> %{B-}
+format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random>  <label-song> %{B-}
 format-stopped = <icon-prev>   <toggle>   <icon-next>   0:00/0:00   %{B-}
 format-online-spacing = 0
 format-prefix = " "
@@ -261,7 +300,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = #b30059
 ;format-underline = #0a6cf5
 
@@ -349,11 +388,13 @@ margin-bottom = 5
 ; MENU
 ; ---------------------------------------------------------------------------- ;;
 
-[module/menu]
+[module/menu-apps]
 type = custom/menu
+;expand-right = true
 format-spacing = 1
 format-background = #99004d
-label-open = "  Settings "
+expand-right= true
+label-open = "  Menu  "
 label-open-foreground = ${colors.foreground}
 label-open-background = #99004d
 label-close = "  "
@@ -395,7 +436,7 @@ menu-2-4-exec = systemctl suspend
 
 # 3
 menu-3-0 = "  "
-menu-3-0-exec = Telegram & 
+menu-3-0-exec = Telegram &
 menu-3-1 = "  "
 menu-3-1-exec = pycharm &
 menu-3-2 = "  "
