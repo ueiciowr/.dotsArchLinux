@@ -11,6 +11,8 @@ configuration {
 	modi: 			"run";
 	width: 			360;
 	lines: 			22;
+    show-icons:     true;
+    drun-icon-theme: "Square-Dark";
 	font: 			"Noto Sans 11";
 	show-match: 		true;
 	separator-style: 	"solid";

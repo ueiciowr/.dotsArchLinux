@@ -1,5 +1,8 @@
-// @ueiciowr
-
+//
+//
+// | @ueiciowr | euiciiowr@outlook.com | Mauricio |
+//
+//
 // ------------------------------------
 // Configuration
 // ------------------------------------
@@ -8,6 +11,8 @@ configuration {
 	modi: 			"window";
 	width: 			450;
 	lines: 			30;
+    show-icons:     true;
+    drun-icon-theme: "Square-Dark";
 	font: 			"Noto Sans 9";
 	show-match: 		false;
 	separator-style: 	"solid";

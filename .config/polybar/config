@@ -1,14 +1,12 @@
-;
-;                     ;;; --------------------------- ;;;
-;                     ;    by: @ueiciowr | Mauricío     ;
-;                     ;;; --------------------------- ;;;
-;
-;
 ;;; ------------------------------------------------------------------------ ;;;
 ;    	 													                   ;
 ;                              top bar                                         ;
 ;     															               ;
 ;;; ------------------------------------------------------------------------ ;;;
+;
+;
+;	| @ueiciowr | euiciiowr@outlook.com | Mauricio |
+;
 
 [colors]
 transparente = #d0000000
@@ -52,9 +50,9 @@ font-2 = Wuncon Siji:pixelsize=10;1
 font-3 = FontAwesome:pixelsize=10;0
 font-4 = feather:size=10;1
 
-modules-left = menu-apps dzen2 i3
+modules-left = menu-apps i3
 modules-center = mpd
-modules-right = update temperature backlight volume memory xkeyboard wlan battery calendar
+modules-right = update temperature backlight volume memory xkeyboard wlan battery calendar rofi
 
 tray-position = right
 tray-padding = 11
@@ -83,11 +81,34 @@ cursor-scroll = ns-resize
 ;     															               ;
 ;;; ------------------------------------------------------------------------ ;;;
 
-[module/dzen2]
+; ---------------------------------------------------------------------------- ;;
+; ROFI
+; ---------------------------------------------------------------------------- ;;
+
+[module/rofi]
 type = custom/text
 content = ""
 content-padding = 1
-click-left = ~/.config/polybar/scripts/sysinfo.sh
+;content-background = #FFFFFF
+content-foreground = #b30059
+click-left = rofi -show drun -config ~/.config/rofi/relaxDrun.rasi &
+click-middle = rofi -show run -config ~/.config/rofi/relax.rasi &
+click-right = rofi -show window -config ~/.config/rofi/relaxWindow.rasi &
+
+; ---------------------------------------------------------------------------- ;;
+; DZEN2
+; ---------------------------------------------------------------------------- ;;
+
+[module/dzen2]
+type = custom/text
+content = ""
+content-padding = 2
+content-foreground = #b30059
+click-left =sh ~/Modelos/sysinfo.sh
+
+; ---------------------------------------------------------------------------- ;;
+; CALENDAR
+; ---------------------------------------------------------------------------- ;;
 
 [module/calendar]
 type = custom/script
@@ -96,17 +117,13 @@ exec =  date "+%a %H:%M:%S"
 format =  <label>
 format-prefix = " "
 format-prefix-foreground = #b30059
-format-padding   = 0.5
-label-padding    = 0
+format-padding = 0.5
+label-padding = 0
 click-left = ~/.config/polybar/scripts/calendar2.sh &
 
-[module/github]
-type = custom/script
-exec = ~/.config/polybar/scripts/github.sh
-interval = 10
-format =  <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.secondary}
+; ---------------------------------------------------------------------------- ;;
+; BACKLIGHT
+; ---------------------------------------------------------------------------- ;;
 
 [module/backlight]
 type = internal/xbacklight
@@ -168,33 +185,57 @@ format-prefix-foreground = #b30059
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
-strip-wsnumbers = true
 index-sort = true
-wrapping-scroll = false
+;pin-workspaces = true
+;wrapping-scroll = true
+strip-wsnumbers = true
+
+enable-click = true
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+click-left = i3wm-wsprev
+;click-right = i3wm-wsnext
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-foreground = #BBBBBB
 
 label-focused = %name%
-label-focused-background = #404040
-label-focused-underline= #b30059
+;label-focused = 
+;label-focused = 
+
+label-indicator-padding = 2
+label-indicator-background = #BBBBBB
+label-indicator-underline = #FF0000
+;label-indicator-overline = #FF0000
+
+label-focused-foreground = #cccccc
 label-focused-padding = 2
+;label-focused-background = #383838
+label-focused-underline = #FF0000
+;label-focused-overline= #FF0000
 
 label-unfocused = %name%
-label-unfocused-padding = 2
+;label-unfocused = 
+label-unfocused-foreground = #747474
+label-unfocused-padding = 1
 
-label-occupied = %name%
-label-occupied-padding = 2
+label-visible = %name
+;label-visible = 
+label-visible-foregroud = #888888
+label-visible-padding = 1
+label-visible-background = #BBBBBB
+label-visible-underline = #FF0000
+;label-visible-overline = #FF0000
 
 label-urgent = %name%
-label-urgent-background = #bd2c40
-label-urgent-padding = 2
-
-label-empty = %name%
-label-empty-foreground = #44ffffff
-label-empty-padding = 2
-
-label-visible = %name%
-label-visible-background = ${colors.background}
-;label-visible-underline = #383a3b
-label-visible-padding = ${self.label-focused-padding}
+;label-urgent = 
+;label-urgent = 
+;label-urgent = 
+;label-urgent = 
+label-urgent-padding = 5
+;label-urgent-foreground = #FA8007
+label-urgent-foreground = #FF0000
 
 ; ---------------------------------------------------------------------------- ;;
 ; MPD
@@ -394,9 +435,9 @@ type = custom/menu
 format-spacing = 1
 format-background = #99004d
 expand-right= true
-label-open = "  Menu  "
-label-open-foreground = ${colors.foreground}
-label-open-background = #99004d
+label-open = "  "
+label-open-foreground = #99004d
+label-open-background = #e6e6e6
 label-close = "  "
 label-close-foreground = ${colors.foreground}
 label-separator = "│"
@@ -441,3 +482,5 @@ menu-3-1 = "  "
 menu-3-1-exec = pycharm &
 menu-3-2 = "  "
 menu-3-2-exec = wireshark &
+menu-3-3 = " "
+menu-3-3-exec = sh ~/Modelos/sysinfo.sh &
